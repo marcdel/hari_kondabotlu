@@ -16,7 +16,7 @@ use Mix.Config
 config :hari_kondabotlu, HariKondabotluWeb.Endpoint,
   load_from_system_env: true,
   url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  server: true
 
 # Do not print debug messages in production
 config :logger, level: :info
@@ -61,4 +61,15 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"
+
+config :hari_kondabotlu, HariKondabotluWeb.Endpoint,
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
+
+# Configure your database
+config :hari_kondabotlu, HariKondabotlu.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  database: "",
+  ssl: true,
+  pool_size: 1
