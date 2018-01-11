@@ -8,4 +8,8 @@ defmodule HariKondabotluWeb.Router do
   scope "/api", HariKondabotluWeb do
     pipe_through :api
   end
+
+  scope "/", HariKondabotluWeb do
+    get "/", PageController, :index
+  end
 end
