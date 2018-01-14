@@ -23,10 +23,10 @@ config :logger, :console,
   metadata: [:request_id]
 
 config :extwitter, :oauth, [
-     consumer_key: System.get_env("TWITTER_CONSUMER_KEY"),
-     consumer_secret: System.get_env("TWITTER_CONSUMER_SECRET"),
-     access_token: System.get_env("TWITTER_ACCESS_TOKEN"),
-     access_token_secret: System.get_env("TWITTER_ACCESS_SECRET")
+     consumer_key: "${TWITTER_CONSUMER_KEY}",
+     consumer_secret: "${TWITTER_CONSUMER_SECRET}",
+     access_token: "${TWITTER_ACCESS_TOKEN}",
+     access_token_secret: "${TWITTER_ACCESS_SECRET}"
 ]
 
 config :hari_kondabotlu,
@@ -38,8 +38,7 @@ config :hari_kondabotlu,
 config :hari_kondabotlu, HariKondabotlu.Scheduler,
   jobs: [
     # Runs every day at 8:00am Eastern:
-    {{:cron, "* 13 * * *"}, {HariKondabotlu.DailyReminder, :post, []}},
-    {{:cron, "20 23 * * *"}, {HariKondabotlu.DailyReminder, :post, []}}
+    {{:cron, "* 13 * * *"}, {HariKondabotlu.DailyReminder, :post, []}}
   ]
 
 # Import environment specific config. This must remain at the bottom
