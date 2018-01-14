@@ -20,7 +20,7 @@ defmodule HariKondabotlu.Mixfile do
   def application do
     [
       mod: {HariKondabotlu.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :extwitter]
     ]
   end
 
@@ -39,7 +39,9 @@ defmodule HariKondabotlu.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:distillery, "~> 1.0.0"}
+      {:distillery, "~> 1.0.0"},
+      {:oauther, "~> 1.1"},
+      {:extwitter, "~> 0.8"}
     ]
   end
 
