@@ -42,7 +42,8 @@ defmodule HariKondabotlu.Mixfile do
       {:distillery, "~> 1.0.0"},
       {:mox, "~> 0.3.1"},
       {:oauther, "~> 1.1"},
-      {:extwitter, "~> 0.8"}
+      {:extwitter, "~> 0.8"},
+      {:quantum, ">= 2.2.1"}
     ]
   end
 

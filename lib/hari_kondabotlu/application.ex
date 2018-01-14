@@ -14,6 +14,7 @@ defmodule HariKondabotlu.Application do
       supervisor(HariKondabotluWeb.Endpoint, []),
       # Start your own worker by calling: HariKondabotlu.Worker.start_link(arg1, arg2, arg3)
       # worker(HariKondabotlu.Worker, [arg1, arg2, arg3]),
+      worker(HariKondabotlu.Scheduler, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

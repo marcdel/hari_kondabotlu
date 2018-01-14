@@ -35,6 +35,13 @@ config :hari_kondabotlu,
 config :hari_kondabotlu,
   twitter_client: HariKondabotlu.ExTwitterClient
 
+config :hari_kondabotlu, HariKondabotlu.Scheduler,
+  jobs: [
+    # Runs every day at 8:00am Eastern:
+    {{:cron, "* 13 * * *"}, {HariKondabotlu.DailyReminder, :post, []}},
+    {{:cron, "20 23 * * *"}, {HariKondabotlu.DailyReminder, :post, []}}
+  ]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
