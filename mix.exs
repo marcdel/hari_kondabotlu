@@ -40,6 +40,7 @@ defmodule HariKondabotlu.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:distillery, "~> 1.0.0"},
+      {:mox, "~> 0.3.1"},
       {:oauther, "~> 1.1"},
       {:extwitter, "~> 0.8"}
     ]

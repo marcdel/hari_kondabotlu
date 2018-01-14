@@ -29,6 +29,9 @@ config :extwitter, :oauth, [
      access_token_secret: System.get_env("TWITTER_ACCESS_SECRET")
 ]
 
+config :hari_kondabotlu,
+  twitter_client: HariKondabotlu.TwitterClient
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

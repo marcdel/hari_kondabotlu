@@ -17,3 +17,6 @@ config :hari_kondabotlu, HariKondabotlu.Repo,
   database: "hari_kondabotlu_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :hari_kondabotlu,
+  twitter_client: HariKondabotlu.TwitterClientMock
