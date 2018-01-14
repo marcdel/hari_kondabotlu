@@ -19,4 +19,7 @@ config :hari_kondabotlu, HariKondabotlu.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :hari_kondabotlu,
+  date_client: HariKondabotlu.DateClientMock
+
+config :hari_kondabotlu,
   twitter_client: HariKondabotlu.TwitterClientMock

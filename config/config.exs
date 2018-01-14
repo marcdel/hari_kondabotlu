@@ -30,7 +30,10 @@ config :extwitter, :oauth, [
 ]
 
 config :hari_kondabotlu,
-  twitter_client: HariKondabotlu.TwitterClient
+  date_client: HariKondabotlu.StandardDateClient
+
+config :hari_kondabotlu,
+  twitter_client: HariKondabotlu.ExTwitterClient
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
